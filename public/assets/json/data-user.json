@@ -10,7 +10,9 @@
                     "name": "Administrator"
                 },
                 "date-start": "2022-09-22 00:00:00",
-                "gender": "Male"
+                "gender": "Male",
+                "email": "narevalo@example.com",
+                "password": "password"
             }
         },
         {
@@ -23,7 +25,9 @@
                     "name": "Coordinador"
                 },
                 "date-start": "2020-01-01 00:00:00",
-                "gender": "Male"
+                "gender": "Male",
+                "email": "ycontreras@example.com",
+                "password": "password"
             }
         }
     ]

@@ -13,6 +13,8 @@ const App: FC = (): JSX.Element => {
     const {useStoreSettings} = useConfig();
     const {store, persistent} = useStoreSettings();
 
+    console.log(store.getState())
+
     return (
         <Provider store={store}>
             <PersistGate persistor={persistent} loading={null}>
