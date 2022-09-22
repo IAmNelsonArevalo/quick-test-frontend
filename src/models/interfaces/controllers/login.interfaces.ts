@@ -24,6 +24,11 @@ export interface IUser {
     password: string;
 }
 
+export interface ISession {
+    token: string;
+    user: IUser;
+}
+
 export interface IUserResponse {
     token: string;
     user: Pick<IUser, "email" | "password">;

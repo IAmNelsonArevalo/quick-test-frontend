@@ -5,6 +5,7 @@ import {
     ILoginAction,
     IUserResponse,
 } from "models/interfaces/controllers/login.interfaces";
+import { IRequest } from "models/interfaces/general.interfaces";
 import useStrings from "strings";
 
 const useAuthActions = () => {
@@ -58,8 +59,26 @@ const useAuthActions = () => {
             }
         };
 
+        const actLogout = (request: IRequest) => async(dispatch: Dispatch): Promise<AnyAction | any> => {
+            const {onError, onSuccess} = request;
+            try {
+                dispatch({
+                    type: LOGIN,
+                    payload: {
+                        token: "",
+                        user: {}
+                    }
+                });
+
+                onSuccess && onSuccess();
+            } catch (error) {
+                onError && onError();
+            }
+        }
+
     return {
         actLogin,
+        actLogout
     };
 };
 
