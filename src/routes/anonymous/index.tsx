@@ -9,14 +9,20 @@ import AnonymousRoute from "./AnonymousRoute";
 const useAnonymousRoutes = () => {
     /** Views */
     const {useScreens} = useViews();
-    const {Login} = useScreens();
+    const {Login, Home} = useScreens();
 
     /** Variables */
     const routes: Array<IAnonymousRoutes> = [
         {
             component: Login,
             path: "/login",
+            name: "Login"
         },
+        {
+            component: Home,
+            path: "/",
+            name: "Home"
+        }
     ];
 
     return map(routes, (route: IAnonymousRoutes, index: number) => (
@@ -29,6 +35,7 @@ const useAnonymousRoutes = () => {
                     component={route.component}
                     layout={route.layout}
                     layoutProps={route.layoutProps}
+                    name={route.name}
                 />
             }
         />

@@ -1,5 +1,6 @@
 import {useDispatch} from "react-redux";
 import useAuthActions from "./auth";
+import useTableActions from "./table";
 
 const useActions = () => {
     const dispatch = useDispatch();
@@ -7,6 +8,7 @@ const useActions = () => {
     return {
         dispatch,
         useAuthActions,
+        useTableActions
     };
 };
 
